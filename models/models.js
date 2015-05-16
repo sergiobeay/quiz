@@ -1,4 +1,5 @@
 var path = require('path');
+<<<<<<< HEAD
 var pg = require('pg');
 
 // Postgres DATABASE_URL = postgres://user:passwd@host:port/database
@@ -25,6 +26,16 @@ var sequelize = new Sequelize(DB_name, user, pwd,
 						omitNull: true // solo Postgres
 					}
 );
+=======
+
+// Cargar Modelo ORM
+var Sequelize = require('sequelize');
+
+// Usar BBDD SQLite:
+var sequelize = new Sequelize(null, null, null,
+						{dialect: "sqlite", storage: "quiz.sqlite"}
+					);
+>>>>>>> 1c058cf832be7a28a4e39856d553161aea4ec7ae
 
 //Importar la definicion de la tabla Quiz en quiz.js
 var Quiz = sequelize.import(path.join(__dirname,'quiz'));
